@@ -1,65 +1,161 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import styled from "styled-components";
+
+import Main from "../sections/Main";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <Container>
       <Head>
-        <title>Create Next App</title>
+        <title>DCS - Welding & Fabrication</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="preload"
+          href="/fonts/Montserrat/Montserrat-Regular.ttf"
+          as="font"
+          crossOrigin=""
+        />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <Main />
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <ServiceSection id="services">
+        <div className="container my-12 px-4 md:px-12 z-0">
+          <div className="flex flex-wrap lg:mx-14">
+            <Card title="Welding and Fabrication" img="welding.jpg" />
+            <Card title="Powder Coating" img="powder-coating.jpg" />
+            <Card title="Fitting" img="glass-railing.jpg" />
+          </div>
         </div>
-      </main>
+      </ServiceSection>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+      <GallerySection id="gallery">
+        <Title>Gallery</Title>
+      </GallerySection>
+
+      <Section id="contact">
+        <Title>Contact</Title>
+      </Section>
+
+      <Footer>
+        <a>Made by John Stringer</a>
+      </Footer>
+    </Container>
+  );
 }
+
+const Container = styled.div`
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: 85vh repeat(3, auto) 20vh;
+  grid-template-columns: 1fr;
+
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    grid-template-rows: 85vh repeat(3, auto);
+  }
+`;
+
+const Section = styled.section`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  height: 95vh;
+  background-color: #252b42;
+  padding-top: 7vh;
+`;
+
+const ServiceSection = styled.section`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background-color: #252b42;
+  padding-top: 7vh;
+
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    position: absolute;
+    height: 0vh;
+    width: 100%;
+    background: none;
+    top: 53vh;
+    z-index: 0;
+  }
+`;
+
+const GallerySection = styled.section`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  height: 95vh;
+  background-color: #252b42;
+  padding-top: 7vh;
+
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    padding-top: 20vh;
+  }
+`;
+
+const Footer = styled.footer`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #252b42;
+  color: #ffffff;
+
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    align-items: center;
+    height: 100px;
+  }
+
+  .a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+const Title = styled.h2`
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  font-style: bold;
+  font-weight: 700;
+  color: #ffffff;
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    font-size: 40px;
+  }
+`;
+
+const Card = ({ title, img }) => {
+  return (
+    <div className="my-1 py-4 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+      <article className="relative inline-block cursor-pointer bg-black rounded-lg shadow-xl transition duration-500 ease-in-out hover:shadow-2xl transform hover:-translate-y-1 hover:scale-110 motion-reduce:transition-none motion-reduce:transform-none">
+        <img
+          className="opacity-50 rounded-lg block h-auto w-full "
+          src={`/images/${img}`}
+        />
+        <div className="absolute m-auto text-white px-4 bottom-4 left-0">
+          <div>
+            <h1 className="lg:text-2xl text-2xl font-semibold">{title}</h1>
+          </div>
+          <div>
+            <h1 className="text-lg font-medium text-gray-300">
+              Find out more...
+            </h1>
+          </div>
+        </div>
+      </article>
+    </div>
+  );
+};
