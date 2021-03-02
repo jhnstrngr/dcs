@@ -15,6 +15,30 @@ export default function Home() {
           as="font"
           crossOrigin=""
         />
+        <link
+          rel="preload"
+          href="/fonts/Montserrat/Montserrat-Medium.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Montserrat/Montserrat-SemiBold.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Montserrat/Montserrat-Bold.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Montserrat/Montserrat-Thin.ttf"
+          as="font"
+          crossOrigin=""
+        />
       </Head>
 
       <Main />
