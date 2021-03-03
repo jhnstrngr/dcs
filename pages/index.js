@@ -33,12 +33,12 @@ export default function Home() {
           as="font"
           crossOrigin=""
         />
-        <link
+        {/* <link
           rel="preload"
           href="/fonts/Montserrat/Montserrat-Thin.ttf"
           as="font"
           crossOrigin=""
-        />
+        /> */}
       </Head>
 
       <Main />
