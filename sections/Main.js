@@ -32,11 +32,11 @@ const MainStyled = styled.main`
   align-items: center;
   height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("./images/mobile-banner.jpg");
+    url("./images/mobile-banner.webp");
   @media only screen and (min-width: 768px) {
     /* For desktop: */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("./images/banner.jpg");
+      url("./images/banner.webp");
   }
 `;
 

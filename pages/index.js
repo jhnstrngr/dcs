@@ -46,9 +46,9 @@ export default function Home() {
       <ServiceSection id="services">
         <div className="container my-12 px-4 md:px-12 z-0">
           <div className="flex flex-wrap lg:mx-14">
-            <Card title="Welding & Fabrication" img="welding.jpg" />
-            <Card title="Powder Coating" img="powder-coating.jpg" />
-            <Card title="Fitting" img="glass-railing.jpg" />
+            <Card title="Welding & Fabrication" img="welding.webp" />
+            <Card title="Powder Coating" img="powder-coating.webp" />
+            <Card title="Fitting" img="glass-railing.webp" />
           </div>
         </div>
       </ServiceSection>
